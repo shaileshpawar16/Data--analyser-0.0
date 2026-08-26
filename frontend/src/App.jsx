@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = 
+ import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://127.0.0.1:8000"
+    : "https://data-analyser-0-0-backend.onrender.com");
 
 function App() {
   const [screen, setScreen] = useState(1);
